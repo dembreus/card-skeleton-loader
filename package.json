@@ -1,0 +1,15 @@
+{
+  "name": "card-skeleton-loader",
+  "version": "1.0.0",
+  "description": "Simple Skeleton loader for a card component.",
+  "main": "index.js",
+  "repository": "https://github.com/dembreus/card-skeleton-loader.git",
+  "author": "Dillon Embreus <35782813+dembreus@users.noreply.github.com>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {},
+  "devDependencies": {
+    "sass": "^1.63.6",
+    "typescript": "^5.1.6"
+  }
+}
