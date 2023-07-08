@@ -1,11 +1,11 @@
-class Card extends HTMLElement {
+export class Card extends HTMLElement {
   constructor() {
     super();
   }
 
   connectedCallback() {
     const shadowRoot = this.attachShadow({ mode: "closed" });
-    const _htmlTemplatePath = "../card/card.html";
+    const _htmlTemplatePath = "src/card/card.html";
     let _cardTemplate = document.createElement("template");
 
     fetch(`${_htmlTemplatePath}`).then(function (response) {

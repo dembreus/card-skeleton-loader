@@ -7,9 +7,25 @@
   "author": "Dillon Embreus <35782813+dembreus@users.noreply.github.com>",
   "license": "MIT",
   "private": false,
+  "scripts": {
+    "sass:watch": "sass --watch scss/main.scss css/style.css",
+    "devserver": "lite-server",
+    "start": "npm-run-all --parallel devserver tsc:watch",
+    "sass:compile": "sass scss/main.scss css/style.comp.css",
+    "css:prefix": "postcss -u autoprefixer -b 'last 10 versions' css/style.comp.css -o css/style.prefix.css",
+    "css:compress": "sass css/style.prefix.css css/style.css -s compressed",
+    "css:build": "npm-run-all sass:compile css:concat css:prefix css:compress",
+    "tsc:watch": "tsc --watch"
+  },
   "dependencies": {},
   "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "concat": "^1.0.3",
+    "lite-server": "^2.6.1",
+    "postcss": "^8.4.25",
+    "postcss-cli": "^10.1.0",
     "sass": "^1.63.6",
-    "typescript": "^5.1.6"
+    "typescript": "^5.1.6",
+    "yarn-run-all": "^3.1.1"
   }
 }
