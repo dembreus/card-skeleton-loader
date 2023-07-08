@@ -5,12 +5,12 @@ export class Card extends HTMLElement {
 
   connectedCallback() {
     const shadowRoot = this.attachShadow({ mode: "closed" });
-    const _htmlTemplatePath = "src/card/card.html";
+    const _htmlTemplatePath: string = "./card/card.html";
     let _cardTemplate = document.createElement("template");
 
     fetch(`${_htmlTemplatePath}`).then(function (response) {
       response.text().then(function (text) {
-        _cardTemplate.innerHTML = `${text}`;
+        _cardTemplate.innerHTML = `${text} hello`;
         shadowRoot.appendChild(_cardTemplate.content);
       });
     });
